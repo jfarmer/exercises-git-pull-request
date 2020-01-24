@@ -8,7 +8,14 @@ We're going to learn how to make pull requests on GitHub. This will be how you r
 - [The Submission Flow](#the-submission-flow)
 - [Practicing Pull Requests](#practicing-pull-requests)
   - [Fork And Clone This Repository](#fork-and-clone-this-repository)
+  - [Create A Feature Branch](#create-a-feature-branch)
   - [Create `hello.txt`](#create-hellotxt)
+  - [Commit `hello.txt`](#commit-hellotxt)
+  - [Create And Commit `goodbye.txt`](#create-and-commit-goodbyetxt)
+  - [Push Your Local Changes Up To GitHub](#push-your-local-changes-up-to-github)
+  - [Create A Pull Request](#create-a-pull-request)
+- [Requesting Code Review](#requesting-code-review)
+- [Merging Pull Request](#merging-pull-request)
 
 ## What Is A Pull Request
 
@@ -42,6 +49,8 @@ This process is called the *[feature branch workflow][atlassian-feature-branch-f
 
 ## Practicing Pull Requests
 
+We're going to create a pull request that contains two individual commits involving different files.
+
 ### Fork And Clone This Repository
 
 First, fork this repository to create your own copy.
@@ -60,14 +69,121 @@ This will create a directory named `exercises-git-pull-request` inside the curre
 cd exercises-git-pull-request
 ```
 
+### Create A Feature Branch
+
+When we're inside a git repository, there is always an "active" branch. To see a list of all the branches run:
+
+```console
+git branch
+```
+
+The active branch is whichever one is prefixed with `*`. Because `master` is the only branch, you should see:
+
+```console
+$ git branch
+* master
+$
+```
+
+Let's create a new branch and switch to it. Run the following:
+
+```console
+git checkout -b first-feature
+```
+
+Run `git branch` again and you should see:
+
+```console
+$ git branch
+* first-feature
+  master
+$
+```
+
 ### Create `hello.txt`
 
 **Note**: Remember to use commands like `ls` and `pwd` to verify you're in the correct directory and looking at the right files.
 
-Inside `exercises-git-pull-request`, create a file named `hello.txt` that contains the following text:
+While on the `first-feature` branch, create a file named `hello.txt` that contains the following text:
 
 ```text
-This is my first pull request!
+Hello! This is my first pull request.
 ```
 
-Make sure to save the file.
+Make sure to save the file. In the console, run the following command:
+
+```console
+git status
+```
+
+This gives you information about the current state of your git repository. It will show you which files have been modified, which files are new and have yet to be committed, etc.
+
+Run the following `git add` command:
+
+```console
+git add hello.txt
+```
+
+Run `git status` again to see how the output changed.
+
+### Commit `hello.txt`
+
+Run the following command to create a new commit:
+
+```console
+git commit -m 'hello.txt is a lovely file'
+```
+
+Run `git status` and note how the output has changed.
+
+### Create And Commit `goodbye.txt`
+
+Let's create a second commit.
+
+Create a file named `goodbye.txt` that contains the following text:
+
+```text
+Goodbye! About to submit my first pull request.
+```
+
+Again, run `git status` to see how the output has changed. Add and commit `goodbye.txt`.
+
+To add it:
+
+```console
+git add goodbye.txt
+```
+
+Run `git status` and note how the output changed.
+
+To commit it:
+
+```console
+git commit -m 'Time to say goodbye'
+```
+
+Run `git status` and note how the output changed.
+
+### Push Your Local Changes Up To GitHub
+
+Right now, your branch exists on your machine but doesn't yet exist on GitHub. To simultaneously push your changes up to GitHub and create the branch on GitHub, run the following command:
+
+```console
+git push --set-upstream origin first-feature
+```
+
+Here `origin` refers to GitHub.
+
+Now visit your repository on GitHub.com!
+
+### Create A Pull Request
+
+On GitHub, you should see the following: https://share.getcloudapp.com/YEud6DE4
+
+Click the **Compare & Pull Request**. On the next page, click **Create Pull Request**.
+
+Ta-da, first pull request!
+
+## Requesting Code Review
+
+## Merging Pull Request
