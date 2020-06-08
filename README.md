@@ -178,7 +178,7 @@ Now visit your repository on GitHub.com!
 
 ### Create A Pull Request
 
-On GitHub, you should see the following: https://share.getcloudapp.com/YEud6DE4
+On GitHub, you should see the following: <https://share.getcloudapp.com/YEud6DE4>
 
 Click the **Compare & Pull Request**. On the next page, click **Create Pull Request**.
 
@@ -199,4 +199,5 @@ You have two ways to request a code review:
 
 Once you're ready to go, merge your pull request into the `master` branch. Don't wait for a review to merge unless you think it's critical.
 
+[github-fundamentals-i]: https://github.com/jfarmer/exercises-javascript-fundamentals
 [atlassian-feature-branch-flow]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
