@@ -4,18 +4,18 @@ We're going to learn how to make pull requests on GitHub. This will be how you r
 
 ## Contents <!-- omit in toc -->
 
-- [What Is A Pull Request](#what-is-a-pull-request)
-- [The Submission Flow](#the-submission-flow)
-- [Practicing Pull Requests](#practicing-pull-requests)
-  - [Fork And Clone This Repository](#fork-and-clone-this-repository)
-  - [Create A Feature Branch](#create-a-feature-branch)
-  - [Create `hello.txt`](#create-hellotxt)
-  - [Commit `hello.txt`](#commit-hellotxt)
-  - [Create And Commit `goodbye.txt`](#create-and-commit-goodbyetxt)
-  - [Push Your Local Changes Up To GitHub](#push-your-local-changes-up-to-github)
-  - [Create A Pull Request](#create-a-pull-request)
-- [Requesting Code Review](#requesting-code-review)
-- [Merging Pull Request](#merging-pull-request)
+- [What Is A Pull Request](#What-Is-A-Pull-Request)
+- [The Submission Flow](#The-Submission-Flow)
+- [Practicing Pull Requests](#Practicing-Pull-Requests)
+  - [Fork And Clone This Repository](#Fork-And-Clone-This-Repository)
+  - [Create A Feature Branch](#Create-A-Feature-Branch)
+  - [Create `hello.txt`](#Create-hellotxt)
+  - [Commit `hello.txt`](#Commit-hellotxt)
+  - [Create And Commit `goodbye.txt`](#Create-And-Commit-goodbyetxt)
+  - [Push Your Local Changes Up To GitHub](#Push-Your-Local-Changes-Up-To-GitHub)
+  - [Create A Pull Request](#Create-A-Pull-Request)
+- [Requesting Code Review](#Requesting-Code-Review)
+- [Merging Pull Request](#Merging-Pull-Request)
 
 ## What Is A Pull Request
 
@@ -186,4 +186,17 @@ Ta-da, first pull request!
 
 ## Requesting Code Review
 
+You have two ways to request a code review:
+
+1. Add one or more instructors as collaborators on your project and then select them from the "Request Review" dropdown
+1. Leave a comment `@`-mentioning anyone you want a code review from. If you want a review from GitHub user `SnorkleFish` then leave a comment that looks like:
+
+   ```text
+   @SnorkleFish I'd like a review!
+   ```
+
 ## Merging Pull Request
+
+Once you're ready to go, merge your pull request into the `master` branch. Don't wait for a review to merge unless you think it's critical.
+
+[atlassian-feature-branch-flow]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
