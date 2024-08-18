@@ -51,16 +51,26 @@ This process is called the *[feature branch workflow][atlassian-feature-branch-f
 
 We're going to create a pull request that contains two individual commits involving different files.
 
-### Fork And Clone This Repository
+### Clone This Repository
 
-First, fork this repository to create your own copy.
-
-Next, clone **your fork** using the `git clone` command. This will create a copy of your repository on your computer (called a *local copy*).
-
-**Note**: Replace `YourGitHubUsername` with your *actual* GitHub username.
+Open VSCode (or your terminal) -- VSCode is recommended. Go to View -> Terminal to see your terminal (you can also "drag up" from the bar at the bottom of the screen). You will be typing the commands below into the terminal. When I open it, I see this:
+```console
+jocelynzhao@Jocelyns-MacBook-Pro ~ %
+```
+This indicates that I am in my home repository. Running `ls` lists the files and folders in my home repository. In my base repository, I have a folder called Desktop. To go into my Desktop folder, I run `cd Desktop` which shows
 
 ```console
-git clone https://github.com/YourGitHubUsername/exercises-git-pull-request.git
+jocelynzhao@Jocelyns-MacBook-Pro Desktop % 
+```
+I can continue navigating through my file storage system like this, until I find where I want to store my folder (I usually create a folder somewhere called SUBC and put all my SUBC related folders in there). Don't worry about doing this if it's too complicated though. 
+
+
+Next, clone **your fork** using the `git clone` command. This will create a copy of your repository on your computer (called a *local copy*) that exists in your current folder.
+
+**Note**: Replace `link` with the link under the green (code) button at the top of the repository
+
+```console
+git clone link
 ```
 
 This will create a directory named `exercises-git-pull-request` inside the current working directory. Enter the directory with the following command:
@@ -68,6 +78,11 @@ This will create a directory named `exercises-git-pull-request` inside the curre
 ```console
 cd exercises-git-pull-request
 ```
+
+You can now open this folder using VSCode. Press the file icon (Explorer), then press Open Folder. Navigate through your filesystem until you get to where you stored the folder `exercises-git-pull-request`. Select the `exercises-git-pull-request` folder and click open. This should load the folder into your VSCode. You will be able to add files and folders very easily by right-clicking on the left navigation bar. You can edit files by directly clicking on them, this should load the files into your main window.
+
+**Note**: at this point, you may need to reopen your terminal. You can do this the same way as described earlier. 
+
 
 ### Create A Feature Branch
 
@@ -85,17 +100,17 @@ $ git branch
 $
 ```
 
-Let's create a new branch and switch to it. Run the following:
+Let's create a new branch and switch to it. Run the following, replacing your-name with your actual name:
 
 ```console
-git checkout -b first-feature
+git checkout -b your-name
 ```
 
 Run `git branch` again and you should see:
 
 ```console
 $ git branch
-* first-feature
+* your-name
   master
 $
 ```
@@ -104,10 +119,10 @@ $
 
 **Note**: Remember to use commands like `ls` and `pwd` to verify you're in the correct directory and looking at the right files.
 
-While on the `first-feature` branch, create a file named `hello.txt` that contains the following text:
+While on the `your-name` branch, create a file named `hello.txt` that contains the following text:
 
 ```text
-Hello! This is my first pull request.
+Hello! This is my first pull request. My name is _____
 ```
 
 Make sure to save the file. In the console, run the following command:
@@ -168,8 +183,10 @@ Run `git status` and note how the output changed.
 
 Right now, your branch exists on your machine but doesn't yet exist on GitHub. To simultaneously push your changes up to GitHub and create the branch on GitHub, run the following command:
 
+Replace `branch_name` with the name of the branch (should be your name, or whatever you named it earlier)
+
 ```console
-git push --set-upstream origin first-feature
+git push --set-upstream origin branch_name
 ```
 
 Here `origin` refers to GitHub.
@@ -182,22 +199,23 @@ On GitHub, you should see the following: <https://share.getcloudapp.com/YEud6DE4
 
 Click the **Compare & Pull Request**. On the next page, click **Create Pull Request**.
 
+You can also get here by going to your branch in the Github page (click Branches to view all branches). On this page, beside the branch you want to submit a pull request for, click the three dots beside the garbage can. You should see a dropdown, one of which has the option to create a New Pull Request. 
+
+You should see a screen that looks like below. Make sure that base repository is *changed* to UBC-SUBC/exercises-git-pull-request
+
+This is what the **wrong** version looks like:
+<img width="1264" alt="Screenshot 2024-08-17 at 10 19 32 PM" src="https://github.com/user-attachments/assets/dd11a71b-305d-469b-b1a7-8870a250b217">
+
+This is what the correct version looks like:
+<img width="1256" alt="Screenshot 2024-08-17 at 10 41 52 PM" src="https://github.com/user-attachments/assets/27234fd2-3d2c-4173-9410-4175f029cd81">
+
+
 Ta-da, first pull request!
-
-## Requesting Code Review
-
-You have two ways to request a code review:
-
-1. Add one or more instructors as collaborators on your project and then select them from the "Request Review" dropdown
-1. Leave a comment `@`-mentioning anyone you want a code review from. If you want a review from GitHub user `SnorkleFish` then leave a comment that looks like:
-
-   ```text
-   @SnorkleFish I'd like a review!
-   ```
 
 ## Merging Pull Request
 
-Once you're ready to go, merge your pull request into the `master` branch. Don't wait for a review to merge unless you think it's critical.
+You don't have to do this for this exercise, but it is good to know how to merge.
+Once you're ready to go, merge your pull request into the `master` branch. There should be a green button that pops up on your pull request. You may need to have your code reviewed by another person first, depending on the rules for the repository.
 
 [github-fundamentals-i]: https://github.com/jfarmer/exercises-javascript-fundamentals
 [atlassian-feature-branch-flow]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
